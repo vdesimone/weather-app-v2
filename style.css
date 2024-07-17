@@ -1,0 +1,66 @@
+:root {
+  --light-blue-color: rgb(209, 238, 255);
+  --medium-blue-color: rgb(125, 196, 237);
+  --dark-blue-color: rgb(56, 88, 106);
+}
+
+body {
+  background: var(--medium-blue-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#weather-container {
+  background: var(--light-blue-color);
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 8px 40px rgba(0, 29, 66, 0.1);
+}
+
+h2, label, p {
+  color: var(--dark-blue-color);
+  margin: 8px 0;
+}
+
+input {
+  width: calc(100% - 20px);
+  padding: 8px;
+  box-sizing: border-box;
+  border: 2px solid var(--medium-blue-color);
+  border-radius: 8px;
+  margin-top: 16px;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 2px solid var(--dark-blue-color);
+  transition: 0.1s;
+}
+
+button {
+  background: var(--medium-blue-color);
+  box-sizing: border-box;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  margin: 24px 0px 8px 0px;
+  width: 100px;
+}
+
+button:hover {
+  background: var(--dark-blue-color);
+  transition: 0.1s;
+}
+
+#weather-icon {
+  display: none;
+}
