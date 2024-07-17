@@ -61,6 +61,42 @@ button:hover {
   transition: 0.1s;
 }
 
+#temp-div p {
+  font-size: 60px;
+  margin-top: -30px;
+}
+
+#weather-info {
+  font-size: 20px;
+}
+
 #weather-icon {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 10px;
+  margin-bottom: 0;
   display: none;
+}
+
+#hourly-forecast {
+  margin-top: 50px;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hourly-item {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  width: 80px;
+  align-items: center;
+  margin: 10px;
+  color: var(--dark-blue-color);
+}
+
+.hourly-item img {
+  width: 50px;
+  height: 50px;
 }
