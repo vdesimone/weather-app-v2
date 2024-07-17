@@ -39,6 +39,7 @@ function displayWeather(data){
   const weatherIcon = document.getElementById("weather-icon");
   const hourlyForecastDiv = document.getElementById("hourly-forecast");
 
+  // Clear previous content
   tempDivInfo.innerHTML = '';
   weatherInfoDiv.innerHTML = '';
   hourlyForecastDiv.innerHTML = '';
@@ -50,6 +51,7 @@ function displayWeather(data){
     const temperature = Math.round((data.main.temp - 273.15) * 9/5 + 32);
     const description = data.weather[0].description;
     const iconCode = data.weather[0].icon;
+    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
 
     const temperatureHTML = `<p>${temperature}°F</p>`;
     const weatherHTML = `
@@ -59,7 +61,7 @@ function displayWeather(data){
 
     tempDivInfo.innerHTML = temperatureHTML;
     weatherInfoDiv.innerHTML = weatherHTML;
-    weatherIcon.src = iconCode;
+    weatherIcon.src = iconUrl;
     weatherIcon.alt = description;
 
     showImage();
