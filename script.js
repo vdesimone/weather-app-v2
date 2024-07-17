@@ -56,7 +56,7 @@ function displayWeather(data){
     const temperatureHTML = `<p>${temperature}°F</p>`;
     const weatherHTML = `
       <p>${cityName}</p>
-      <p>${description}</p>
+      <p id="weather-description">${description}</p>
     `;
 
     tempDivInfo.innerHTML = temperatureHTML;
