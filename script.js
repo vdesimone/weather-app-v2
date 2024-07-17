@@ -34,13 +34,10 @@ function getWeather() {
 }
 
 function displayWeather(data){
-  const tempDivInfo = document.getElementById("temp-div");
   const weatherInfoDiv = document.getElementById("weather-info");
-  const weatherIcon = document.getElementById("weather-icon");
   const hourlyForecastDiv = document.getElementById("hourly-forecast");
 
   // Clear previous content
-  tempDivInfo.innerHTML = '';
   weatherInfoDiv.innerHTML = '';
   hourlyForecastDiv.innerHTML = '';
 
@@ -52,19 +49,29 @@ function displayWeather(data){
     const description = data.weather[0].description;
     const iconCode = data.weather[0].icon;
     const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
+    const month = new Date().toLocaleString('default', { month: 'long' });
+    const day = new Date().getDate();
 
-    const temperatureHTML = `<p>${temperature}°F</p>`;
     const weatherHTML = `
-      <p>${cityName}</p>
-      <p id="weather-description">${description}</p>
+      <div class="weather-left">
+        <img src=${iconUrl} alt=${description} id="weather-icon"/>
+      </div>
+      <div id="weather-right">
+        <div id="weather-top">
+          <p id="weather-city">${cityName}</p>
+          <p id="weather-date">${month} ${day}</p>
+        </div>
+        <div id="weather-middle">
+          <p id="weather-temperature">${temperature}°F</p>
+        </div>
+        <div id="weather-bottom">
+          <p id="weather-description">${description}</p>
+        </div>
+      </div>
     `;
 
-    tempDivInfo.innerHTML = temperatureHTML;
     weatherInfoDiv.innerHTML = weatherHTML;
-    weatherIcon.src = iconUrl;
-    weatherIcon.alt = description;
 
-    showImage();
   };
 }
 
@@ -88,9 +95,4 @@ function displayHourlyForecast(hourlyData) {
     `;
     hourlyForecastDiv.innerHTML += hourlyItemHTML
   });
-}
-
-function showImage() {
-  const weatherIcon = document.getElementById('weather-icon');
-  weatherIcon.style.display = 'block';
 }

@@ -23,11 +23,6 @@ body {
   box-shadow: 0px 8px 40px rgba(0, 29, 66, 0.1);
 }
 
-h2, label, p {
-  color: var(--dark-blue-color);
-  margin: 8px 0;
-}
-
 input {
   width: calc(100% - 20px);
   padding: 8px;
@@ -61,22 +56,57 @@ button:hover {
   transition: 0.1s;
 }
 
-#temp-div p {
-  font-size: 60px;
-  margin-top: -30px;
-}
+/* DISPLAY WEATHER ITEMS */
 
 #weather-info {
-  font-size: 20px;
+  display: flex;
+  height: 200px;
+  width: 400px;
 }
 
-#weather-icon {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 10px;
-  margin-bottom: 0;
-  display: none;
+#weather-left {
+  flex: 50%;
 }
+
+#weather-right {
+  flex: 50%;
+}
+
+#weather-top {
+  display: flex;
+  margin: 0;
+  flex: 20%;
+}
+
+#weather-city {
+  justify-content: center;
+  align-items: center;
+  flex: 50%;
+}
+
+#weather-date {
+  justify-content: center;
+  align-items: center;
+  flex: 50%;
+}
+
+#weather-middle {
+  display: flex;
+  margin: 0;
+  flex: 60%;
+  justify-content: center;
+  align-items: center;
+}
+
+#weather-bottom {
+  display: flex;
+  margin: 0;
+  flex: 20%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* HOURLY FORECAST ITEMS */
 
 #hourly-forecast {
   margin-top: 50px;
@@ -99,8 +129,4 @@ button:hover {
 .hourly-item img {
   width: 50px;
   height: 50px;
-}
-
-#weather-description {
-  text-transform: capitalize;
 }
