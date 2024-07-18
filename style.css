@@ -2,6 +2,7 @@
   --light-blue-color: rgb(209, 238, 255);
   --medium-blue-color: rgb(125, 196, 237);
   --dark-blue-color: rgb(56, 88, 106);
+  --very-dark-blue-color: rgb(31, 48, 57);
 }
 
 body {
@@ -21,6 +22,10 @@ body {
   border-radius: 15px;
   text-align: center;
   box-shadow: 0px 8px 40px rgba(0, 29, 66, 0.1);
+}
+
+#weather-container h2 {
+  color: var(--very-dark-blue-color);
 }
 
 input {
@@ -56,13 +61,16 @@ button:hover {
   transition: 0.1s;
 }
 
-/* DISPLAY WEATHER ITEMS */
+/* WEATHER-INFO SECTION */
 
 #weather-info {
   display: flex;
   height: 200px;
   width: 400px;
+  margin-top: 20px
 }
+
+/* LEFT & RIGHT SECTIONS */
 
 #weather-left {
   flex: 50%;
@@ -70,12 +78,19 @@ button:hover {
 
 #weather-right {
   flex: 50%;
+  margin: 0;
 }
+
+/* TOP SECTION*/
 
 #weather-top {
   display: flex;
   margin: 0;
-  flex: 20%;
+}
+
+#weather-top p {
+  color: var(--dark-blue-color);
+  padding: 0;
 }
 
 #weather-city {
@@ -90,26 +105,44 @@ button:hover {
   flex: 50%;
 }
 
+/* MIDDLE SECTION*/
+
 #weather-middle {
   display: flex;
   margin: 0;
-  flex: 60%;
   justify-content: center;
   align-items: center;
 }
+
+#weather-middle p {
+  color: var(--very-dark-blue-color);
+  font-size: 60px;
+  margin: auto;
+  height: 66.8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BOTTOM SECTION*/
 
 #weather-bottom {
   display: flex;
   margin: 0;
-  flex: 20%;
   justify-content: center;
   align-items: center;
 }
 
+#weather-bottom p {
+  color: var(--dark-blue-color);
+  text-transform: capitalize;
+}
+
+
 /* HOURLY FORECAST ITEMS */
 
 #hourly-forecast {
-  margin-top: 50px;
+  margin-top: 30px;
   overflow-x: auto;
   white-space: nowrap;
   display: flex;
