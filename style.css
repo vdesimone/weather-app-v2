@@ -36,6 +36,7 @@ input {
   border-radius: 8px;
   margin-top: 16px;
   outline: none;
+  color: var(--very-dark-blue-color);
 }
 
 input[type=text]:focus {
