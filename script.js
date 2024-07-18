@@ -72,6 +72,7 @@ function displayWeather(data){
 
     weatherInfoDiv.innerHTML = weatherHTML;
 
+    showDiv();
   };
 }
 
@@ -96,3 +97,5 @@ function displayHourlyForecast(hourlyData) {
     hourlyForecastDiv.innerHTML += hourlyItemHTML
   });
 }
+
+const showDiv = () => document.getElementById('weather-info').style.display = "flex";
